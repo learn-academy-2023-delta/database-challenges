@@ -57,11 +57,80 @@ Which countries achieved independence after 1945 and are not some kind of republ
         AND indepyear > 1945;
 
 Which fifteen countries have the lowest life expectancy? (HINT: starts with Zambia, ends with Sierra Leonne)
+
+
+SELECT * 
+FROM country
+WHERE lifeexpectancy != 0 
+ORDER BY lifeexpectancy
+LIMIT 15;
+
+
 Which fifteen countries have the highest life expectancy? (HINT: starts with Andorra, ends with Spain)
+
+
+SELECT * 
+FROM country
+WHERE lifeexpectancy != 0 
+ORDER BY lifeexpectancy DESC
+LIMIT 15;
+
+
 Which five countries have the lowest population density (density = population / surfacearea)? (HINT: starts with Greenland)
+
+
+SELECT name, surfacearea, population, population/surfacearea AS population_density
+FROM country
+WHERE population !=0  
+ORDER BY population_density 
+LIMIT 5;
+
+
 Which countries have the highest population density?(HINT: starts with Macao)
+
+
+SELECT name, surfacearea, population, population/surfacearea AS population_density
+FROM country
+WHERE population !=0  
+ORDER BY population_density DESC
+LIMIT 5;
+
+
 Which is the smallest country by area? (HINT: .4)
+
+
+SELECT name, surfacearea
+FROM country
+ORDER BY surfacearea
+LIMIT 1;
+
+
 Which is the smallest country by population? (HINT: 50)?
+
+
+SELECT name, population
+FROM country
+WHERE population !=0
+ORDER BY population
+LIMIT 1;
+
+
 Which is the biggest country by area? (HINT: 1.70754e+07)
+
+
+SELECT name, surfacearea
+FROM country
+ORDER BY surfacearea DESC
+LIMIT 1;
+
+
+
 Which is the biggest country by population? (HINT: 1277558000)
+
+SELECT name, population
+FROM country
+ORDER BY population DESC
+LIMIT 1;
+
+
 Who is the most influential head of state measured by population? (HINT: Jiang Zemin)
